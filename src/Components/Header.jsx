@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 export class Header extends Component {
     render() {
         return (
@@ -14,7 +15,7 @@ export class Header extends Component {
                                 <a className="nav-link active text-white" aria-current="page" href="#">Inicio</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-white" href="#">Rastree su envio</a>
+                                <a className="nav-link text-white" href="#">Rastree su envío</a>
                             </li>
                         </ul>
                         <div className="d-flex">

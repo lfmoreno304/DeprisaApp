@@ -1,7 +1,8 @@
-import Header from "./Componets/Header";
-import Footer from "./Componets/Footer";
+import Header from "./Components/Header.jsx";
+import Footer from "./Components/Footer.jsx";
 import Logo from "./Assets/Logo.png";
 import './App.css';
+
 function App() {
   var mensaje = "BIENVENIDOS A LA MEJOR OPCION DE MENSAJERIA"
   return (
@@ -17,7 +18,7 @@ function App() {
           </div>
         </div>
         <div className="container mx-auto pt-3">
-          <h2 className="text-center text-primary">Conectando personas a  través de la confianza</h2>
+          <h2 className="text-center text-primary">Conectando personas a través de la confianza</h2>
           <hr className="mx-5"></hr>
           <p className="text-center">Creemos que un mundo conectado es
             un mundo mejor, y esa creencia guia cualquier cosa que hacemos</p>
