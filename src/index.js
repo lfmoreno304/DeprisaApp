@@ -8,8 +8,7 @@ const container = document.getElementById('root');
 
 ReactDOM.render(
   <React.StrictMode>
-    
-    <CreateUser />
+    <App />
   </React.StrictMode>,
   container
 );
