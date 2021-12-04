@@ -3,12 +3,13 @@ import Header from './Header';
 import Footer from './Footer';
 import SideBar from './SideBar';
 import '../Styles/PackageForm.css';
+
 export default function PackageForm() {
     return (
-       <>
-            <Header/>
-          <div className="d-flex">
-                <SideBar/>
+        <>
+            <Header />
+            <div className="d-flex">
+                <SideBar />
                 <div className="container">
                     <h1 className="text-center text-warning pt-5 mb-5">FORMATO PARA LA RECOGIDA DE PAQUETES</h1>
                     <form>
@@ -121,8 +122,8 @@ export default function PackageForm() {
                         </div>
                     </form>
                 </div>
-          </div>
-            <Footer/>
-       </>
+            </div>
+            <Footer />
+        </>
     )
 }

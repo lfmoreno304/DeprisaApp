@@ -13,7 +13,7 @@ export default function Tracking() {
                 <div className="">
                     <h1 className="text-center text-warning">RASTREO DE ENVÍOS</h1>
                     <p>Realice aquí el seguimiento de sus envíos nacionales</p>
-                    <p>Ingrese su número de guía</p>
+                    <p>Ingrese su número de guía:</p>
                 </div>
                 <div className="container-sm">
                     <div className="row">

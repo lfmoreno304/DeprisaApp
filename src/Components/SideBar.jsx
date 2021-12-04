@@ -3,7 +3,6 @@ import React from 'react'
 export default function SideBar() {
     return (
         <>
-
             <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-success sidebar collapse">
                 <div className="position-sticky pt-3">
 
@@ -34,8 +33,6 @@ export default function SideBar() {
 
                 </div>
             </nav>
-
-
         </>
     )
 }
