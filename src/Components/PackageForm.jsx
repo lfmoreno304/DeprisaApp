@@ -1,13 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import SideBar from './SideBar';
-import '../Styles/PackageForm.css';
+import axios from 'axios';
+
 export default function PackageForm() {
+    
+    const [departamentos, setDepartamentos] = useState([]);
+
+    useEffect(() => {
+        const url = "https://www.datos.gov.co/resource/xdk5-pm3f.json?$$app_token=AXyDJ1ulg4RCGgyNVEL4ksWeM";
+        
+        axios.get(url)
+        .then(function (res) {
+            setDepartamentos(res.data);
+            console.log("Ok", res.data)
+            
+        })
+        .catch(function (err) {
+            console.log("Error", err);
+        })
+    }, []);
+
     return (
-       <>
-            <Header/>
-          <div className="d-flex">
+    <>
+        <Header/>
+        <div className="d-flex">
                 <SideBar/>
                 <div className="container">
                     <h1 className="text-center text-warning pt-5 mb-5">FORMATO PARA LA RECOGIDA DE PAQUETES</h1>
@@ -17,7 +35,7 @@ export default function PackageForm() {
                                 <label className="form-label">Dia en el que tenga disponibilidad</label>
                             </div>
                             <div className="col">
-                                <input className="form-control" placeholder="DD/MM/YY"></input>
+                                <input className="form-control" type="date" placeholder="DD/MM/YY"></input>
                             </div>
                         </div>
                         <div className="row  mb-3">
@@ -25,7 +43,14 @@ export default function PackageForm() {
                                 <label className="form-label">Franja horaria disponible</label>
                             </div>
                             <div className="col">
-                                <input className="form-control" placeholder="00:00 - 23:59"></input>
+                                <select className="form-control">
+                                    <option value="am">
+                                        Mañana
+                                    </option>
+                                    <option value="pm">
+                                        Tarde
+                                    </option>
+                                </select>
                             </div>
                         </div>
                         <div className="row  mb-3">
@@ -49,7 +74,13 @@ export default function PackageForm() {
                                 <label className="form-label">Departamento</label>
                             </div>
                             <div className="col">
-                                <input className="form-control" placeholder="Departamento remitente"></input>
+                                <select className="form-control">
+                                    {departamentos.map(departamento =>(
+                                        <option key={departamento.c_digo_dane_del_departamento} 
+                                        value={departamento.c_digo_dane_del_departamento}>{departamento.departamento}
+                                        </option>)
+                                    )}
+                                </select>
                             </div>
                         </div>
                         <div className="row  mb-3">
@@ -121,8 +152,8 @@ export default function PackageForm() {
                         </div>
                     </form>
                 </div>
-          </div>
-            <Footer/>
-       </>
+        </div>
+        <Footer/>
+    </>
     )
 }

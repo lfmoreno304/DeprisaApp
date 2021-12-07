@@ -13,28 +13,28 @@ export default function Tracking() {
                 <div className="">
                     <h1 className="text-center text-warning">RASTREO DE ENVÍOS</h1>
                     <p>Realice aquí el seguimiento de sus envíos nacionales</p>
-                    <p>Ingrese su número de guía</p>
+                    <p><em>Ingrese su número de guía</em></p>
                 </div>
-                <div className="container-sm">
-                    <div className="row">
-                        <div className="col-xl-4">
-                            <div class="input-group mb-3 align-item-center">
-                                <input type="text" class="form-control" placeholder="Número de guía" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                                <button type="button" class="btn btn-primary">Buscar</button>
-                            </div>
+                <div className="container-fluid">
+                    <div className="row justify-content-end">
+                        <div className="col-md-auto pt-2">
+                            <input type="text" className="form-control" placeholder="Número de guía" aria-label="Recipient's username" aria-describedby="basic-addon2" /> 
+                        </div>
+                        <div className="col-md-5 pt-2">
+                        <button type="button" className="btn btn-primary">Buscar</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="container pb-5 pt-5">
-                <div class="row align-items-start gx-5">
-                    <div class="col">
+                <div className="row align-items-start gx-5">
+                    <div className="col">
                         < img src={Tracking1} alt="img_1" />
                     </div>
-                    <div class="col">
+                    <div className="col">
                         <img src={Tracking2} alt="img_2" />
                     </div>
-                    <div class="col">
+                    <div className="col">
                         <img src={Tracking3} alt="img_3" />
                     </div>
                 </div>
