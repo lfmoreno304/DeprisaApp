@@ -1,18 +1,19 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import EmployeeSideBar from './EmployeeSideBar';
 
-function ShipCompanyForm(props) {
+function ShipCompanyForm() {
     return(
         <>
         <Header />
+            <div className="d-flex">
+                <EmployeeSideBar />
             <div className="container mb-5">
             <h1 className="text-center text-warning pt-5 mb-4">FORMATO PARA RECOGIDA DE PAQUETES</h1>
-                <div className="">
-                    <div className="form-group form-inline">    
-                        <label className="col-form-label col-md-auto" for="courier">Mensajero Asignado</label>
-                        <input className="form-control col-lg-4" type="text" id="courier" placeholder="Mensajero" disabled/>
-                    </div>
+            <div className="">
+            <label className="form-label">Mensajero Asignado</label>
+            <input className="form-control mb-3" type="text" placeholder="Mensajero" disabled/>        
             <label className="form-label">Dimensiones del paquete</label>
             <input className="form-control mb-3" type="text" placeholder="Ancho x Alto x Largo" />
             <label className="form-label">Peso final (Kg)</label>
@@ -28,6 +29,7 @@ function ShipCompanyForm(props) {
                     <button className ="btn btn-primary mb-3" onClick="">Envíar Formato</button>
                     <button className ="btn btn-secondary mb-3" onClick="">Cancelar</button>
                 </div>
+            </div>
             </div>
         <Footer />
         </>
