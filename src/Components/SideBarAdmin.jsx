@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function SideBar() {
+export default function SideBarAdmin() {
     return (
         <>
             <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-success sidebar collapse">
@@ -22,21 +22,36 @@ export default function SideBar() {
                                 </button>
                             </Link>
                         </li>
-                        <li className="nav-item text-center">
-                            <Link to="/usertracking">
-                                <button className="btn btn-secondaty text-white" aria-current="page" >
-                                    Rastrear envios
-                                </button>
-                            </Link>
-                        </li>
                         <li className="nav-item text-center ">
-                            <Link to="/userform">
+                            <Link to="/companyform">
                                 <button className="btn btn-secondaty text-white" aria-current="page" >
                                     Programar recogida de paquetes
                                 </button>
                             </Link>
                         </li>
+                        <li className="nav-item text-center">
+                            <Link to="/scheduled">
+                                <button className="btn btn-secondaty text-white" aria-current="page" >
+                                    Reporte envíos programados
+                                </button>
+                            </Link>
+                        </li>
+                        <li className="nav-item text-center">
+                            <Link to="/delivered">
+                                <button className="btn btn-secondaty text-white" aria-current="page" >
+                                    Reporte envíos entregados
+                                </button>
+                            </Link>
+                        </li>
+                        <li className="nav-item text-center">
+                            <Link to="/usermanagement">
+                                <button className="btn btn-secondaty text-white" aria-current="page" >
+                                    Gestionar usuarios
+                                </button>
+                            </Link>
+                        </li>
                     </ul>
+
                 </div>
             </nav>
         </>
