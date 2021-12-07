@@ -17,6 +17,8 @@ import PackageForm from "./Components/PackageForm";
 import MyDeliveries from "./Components/MyDeliveries";
 import MyDeliveries2 from "./Components/MyDeliveries2";
 import UserTracking from "./Components/UserTracking";
+import UserManagement from "./Components/UserManagement";
+import EmployeeManagement from "./Components/EmployeeManagement";
 import Register from "./Components/Register";
 
 export default function App() {
@@ -38,6 +40,8 @@ export default function App() {
         <Route path="/mydeliveries" element={<MyDeliveries />} />
         <Route path="/mydeliveries2" element={<MyDeliveries2 />} />
         <Route path="/usertracking" element={<UserTracking />} />
+        <Route path="/usermanagement" element={<UserManagement/>}/>
+        <Route path="/employeemanagement" element={<EmployeeManagement/>}/>
         <Route path="/dashboard" element={<DashAdmin />} />
       </Routes>
       </div>

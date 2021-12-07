@@ -1,0 +1,54 @@
+{
+    "users":[
+        {
+            "name": "Luis Fernando",
+            "password": "112323",
+            "email": "asdasd@gmail.com",
+            "id": "1",
+            "city": "Bogota",
+            "adress": "calle 1"
+        },
+        {
+            "name": "Orlando",
+            "password": "2123213",
+            "email": "asdasd@gmail.com",
+            "id": "2",
+            "city": "Bogota",
+            "adress": "calle 1"
+        },
+        {
+            "name": "Adrian",
+            "password": "32132132",
+            "email": "asdasd@gmail.com",
+            "id": "3",
+            "city": "Bogota",
+            "adress": "calle 1"
+        }
+    ],
+    "employee":[
+        {
+            "name": "Maria",
+            "password": "1",
+            "email": "asdasd@gmail.com",
+            "id": "15678945",
+            "city": "Bogota",
+            "adress": "calle 1"
+        },
+        {
+            "name": "Juan",
+            "password": "2",
+            "email": "asdasd@gmail.com",
+            "id": "15678945",
+            "city": "Bogota",
+            "adress": "calle 1"
+        },
+        {
+            "name": "Jose",
+            "password": "3",
+            "email": "asdasd@gmail.com",
+            "id": "15678945",
+            "city": "Bogota",
+            "adress": "calle 1"
+        }
+    ]
+}
