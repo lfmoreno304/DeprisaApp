@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import SideBar from './SideBar';
+import SideBarAdmin from './SideBarAdmin';
 import axios from 'axios';
 
 export default function EmployeeManagement() {
@@ -19,7 +19,7 @@ export default function EmployeeManagement() {
         <>
             <Header />
             <div className="d-flex">
-                <SideBar />
+                <SideBarAdmin />
                 <div className="container">
                     <h1 className="text-center text-warning pt-5 mb-5">Gestion de mensajeros</h1>
                     <table className="table">
