@@ -7,6 +7,7 @@ import "./Styles/index.css";
 import Login from "./Components/Login";
 import Home from "./Components/Home";
 import Tracking from "./Components/Tracking";
+import DashAdmin from "./Components/DashAdmin";
 import UserProfile from "./Components/UserProfile";
 import PackageFormComp from "./Components/PackageFormComp";
 import EmployeeProfile from "./Components/EmployeeProfile";
@@ -16,6 +17,7 @@ import PackageForm from "./Components/PackageForm";
 import MyDeliveries from "./Components/MyDeliveries";
 import MyDeliveries2 from "./Components/MyDeliveries2";
 import UserTracking from "./Components/UserTracking";
+import Register from "./Components/Register";
 
 export default function App() {
 
@@ -25,6 +27,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} exact />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/tracking" element={<Tracking />} />
         <Route path="/userprofile" element={<UserProfile />} />
         <Route path="/employeeprofile" element={<EmployeeProfile />} />
@@ -35,6 +38,7 @@ export default function App() {
         <Route path="/mydeliveries" element={<MyDeliveries />} />
         <Route path="/mydeliveries2" element={<MyDeliveries2 />} />
         <Route path="/usertracking" element={<UserTracking />} />
+        <Route path="/dashboard" element={<DashAdmin />} />
       </Routes>
       </div>
     </Router>    
