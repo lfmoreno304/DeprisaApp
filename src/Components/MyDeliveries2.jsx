@@ -10,11 +10,10 @@ export default function MyDeliveries2() {
             <div className="d-flex">
                 <EmployeeSideBar />
                 <div className="container"> 
-                    <h1 className="text-center text-warning pt-5">ENVÍOS</h1>   
-
+                    <h1 className="text-center text-warning pt-5 mb-5">ENVÍOS</h1>   
                     <div className="d-flex">
-                        <table class="table table-striped table-hover">
-                            <thead className="border text-center">
+                        <table className="table table-bordered table-hover">
+                            <thead className="table-success">
                                 <tr>
                                 <th>#</th>
                                 <th>Nombre</th>
@@ -24,7 +23,7 @@ export default function MyDeliveries2() {
                                 <th>Cuidad</th>
                                 </tr>
                             </thead>
-                            <tbody className="border text-center">
+                            <tbody className="text-center">
                                 <tr>
                                 <td>1</td>
                                 <td>Mark</td>

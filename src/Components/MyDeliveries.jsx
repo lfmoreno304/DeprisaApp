@@ -10,20 +10,19 @@ export default function MyDelivery() {
             <div className="d-flex">
                 <SideBar/>
                 <div className="container"> 
-                    <h1 className="text-center text-warning pt-5">MIS ENVÍOS</h1>   
-
+                    <h1 className="text-center text-warning pt-5 mb-5">MIS ENVÍOS</h1>   
                     <div className="d-flex">
-                        <table class="table table-striped table-hover">
-                            <thead className="border text-center">
+                        <table className="table table-bordered table-hover">
+                            <thead className="table-success">
                                 <tr>
-                                <th>#</th>
+                                <th>N° GUIA</th>
                                 <th>Nombre</th>
                                 <th>Dirección</th>
                                 <th>Fecha de Entrega</th>
                                 <th>Guía</th>
                                 </tr>
                             </thead>
-                            <tbody className="border text-center">
+                            <tbody className="text-center">
                                 <tr>
                                 <td>1</td>
                                 <td>Mark</td>
@@ -50,7 +49,7 @@ export default function MyDelivery() {
                     </div> 
                 </div>        
             </div>    
-           <Footer />
+        <Footer />
         </>
     )    
 }

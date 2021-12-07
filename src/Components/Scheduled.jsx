@@ -27,7 +27,7 @@ export default function Scheduled() {
                 <th scope="col">ACCIONES</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="text-center">
             <tr>
               <th>1</th>
               <td>Mark</td>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import user from "../Assets/user.png"
 
 export default function SideBar() {
     return (
@@ -7,7 +8,7 @@ export default function SideBar() {
 
             <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-success sidebar collapse">
                 <div className="position-sticky pt-3">
-
+                    <img src={ user } alt="avatar-profile" className="rounded-circle mx-auto d-block" width="200" height="160"/>
                     <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-white">
                         <span>Nombre de usuario</span>
                     </h6>
