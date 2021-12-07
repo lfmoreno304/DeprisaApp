@@ -53,7 +53,7 @@ export default function MyDeliveries2() {
                     </div> 
                 </div>        
             </div>    
-           <Footer />
+        <Footer />
         </>
     )    
 }

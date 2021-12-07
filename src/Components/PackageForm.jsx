@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import SideBar from './SideBar';
@@ -7,20 +7,45 @@ import axios from 'axios';
 export default function PackageForm() {
     
     const [departamentos, setDepartamentos] = useState([]);
+    const [ciudades, setCiudades] = useState([]);
+    const selectDepartamento = useRef();
+    const [departamento, setDepartamento] = useState();
+
+    function handleSelection() {
+        setDepartamento(selectDepartamento.current.options[selectDepartamento.current.selectedIndex].value)
+    }
 
     useEffect(() => {
-        const url = "https://www.datos.gov.co/resource/xdk5-pm3f.json?$$app_token=AXyDJ1ulg4RCGgyNVEL4ksWeM";
+        const url = "https://datos.gov.co/resource/xdk5-pm3f.json?$$app_token=AXyDJ1ulg4RCGgyNVEL4ksWeM&$select=departamento&$group=departamento&$order=departamento";
         
         axios.get(url)
         .then(function (res) {
             setDepartamentos(res.data);
-            console.log("Ok", res.data)
+
             
         })
         .catch(function (err) {
             console.log("Error", err);
         })
     }, []);
+
+    useEffect(() => {
+        const url = "https://datos.gov.co/resource/xdk5-pm3f.json?$$app_token=AXyDJ1ulg4RCGgyNVEL4ksWeM&$select=municipio&$where=departamento=";
+        
+        console.log(departamento);
+        if(departamento){
+            axios.get(url+`'${departamento}'`)
+
+            .then(function (res) {
+                setCiudades(res.data);
+                
+            })
+            .catch(function (err) {
+                console.log("Error", err);
+            })
+        }
+        
+}, [departamento]);
 
     return (
     <>
@@ -71,13 +96,13 @@ export default function PackageForm() {
                         </div>
                         <div className="row  mb-3">
                             <div className="col">
-                                <label className="form-label">Departamento</label>
+                                <label className="form-label">Departamento del remitente</label>
                             </div>
                             <div className="col">
-                                <select className="form-control">
+                                <select ref={ selectDepartamento } onChange={ handleSelection } className="form-control">
                                     {departamentos.map(departamento =>(
-                                        <option key={departamento.c_digo_dane_del_departamento} 
-                                        value={departamento.c_digo_dane_del_departamento}>{departamento.departamento}
+                                        <option key={departamento.departamento} 
+                                        value={departamento.departamento}>{departamento.departamento}
                                         </option>)
                                     )}
                                 </select>
@@ -85,10 +110,16 @@ export default function PackageForm() {
                         </div>
                         <div className="row  mb-3">
                             <div className="col">
-                                <label className="form-label">Ciudad</label>
+                                <label className="form-label">Ciudad de remitente</label>
                             </div>
                             <div className="col">
-                                <input className="form-control" placeholder="Ciudad remitente"></input>
+                            <select className="form-control">
+                                    {ciudades.map(ciudad =>(
+                                        <option key={ciudad.municipio} 
+                                        value={ciudad.municipio}>{ciudad.municipio}
+                                        </option>)
+                                    )}
+                                </select>
                             </div>
                         </div>
                         <div className="row  mb-3">
@@ -117,18 +148,30 @@ export default function PackageForm() {
                         </div>
                         <div className="row  mb-3">
                             <div className="col">
-                                <label className="form-label">Departmento</label>
+                                <label className="form-label">Departamento del destinatario</label>
                             </div>
                             <div className="col">
-                                <input className="form-control" placeholder="Depertamento destinatario"></input>
+                            <select ref={ selectDepartamento } onChange={ handleSelection } className="form-control">
+                                    {departamentos.map(departamento =>(
+                                        <option key={departamento.departamento} 
+                                        value={departamento.departamento}>{departamento.departamento}
+                                        </option>)
+                                    )}
+                                </select>
                             </div>
                         </div>
-                        <div className="row  mb-3">
+                        <div className="row mb-3">
                             <div className="col">
-                                <label className="form-label">Ciudad</label>
+                                <label className="form-label">Ciudaddel destinatario</label>
                             </div>
                             <div className="col">
-                                <input className="form-control" placeholder="Ciudad destinatario"></input>
+                            <select className="form-control">
+                                    {ciudades.map(ciudad =>(
+                                        <option key={ciudad.municipio} 
+                                        value={ciudad.municipio}>{ciudad.municipio}
+                                        </option>)
+                                    )}
+                                </select>
                             </div>
                         </div>
                         <div className="row  mb-3">
