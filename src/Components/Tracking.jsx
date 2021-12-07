@@ -29,7 +29,7 @@ export default function Tracking() {
             <div className="container pb-5 pt-5">
                 <div class="row align-items-start gx-5">
                     <div class="col">
-                        < img src={Tracking1} alt="img_1" />
+                        <img src={Tracking1} alt="img_1" />
                     </div>
                     <div class="col">
                         <img src={Tracking2} alt="img_2" />
