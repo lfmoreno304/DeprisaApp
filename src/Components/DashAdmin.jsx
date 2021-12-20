@@ -4,7 +4,7 @@ import Header from './Header';
 import Calendar from '../Assets/Calendar.png';
 import Canceled from '../Assets/Canceled.png';
 import Delivery from '../Assets/Delivery.png';
-import User from '../Assets/User.png'
+import User from '../Assets/user.png'
 import SideBarAdmin from './SideBarAdmin';
 
 export default function DashAdmin() {
