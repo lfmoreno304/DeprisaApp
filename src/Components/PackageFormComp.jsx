@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import EmployeeSideBar from './EmployeeSideBar';
 
 function ShipCompanyForm() {
+
+    const valorDeclarado= useRef();
+    const [valroSeguro, setValroSeguro] = useState();
+    function handleValue(){
+        setValroSeguro(valorDeclarado.current.value * 0.05)
+    }
     return(
         <>
         <Header />
@@ -19,9 +25,9 @@ function ShipCompanyForm() {
             <label className="form-label">Peso final (Kg)</label>
             <input className="form-control mb-3" type="text" placeholder="Kilogramos" />
             <label className="form-label">Valor declarado del producto a envíar</label>
-            <input className="form-control mb-3" type="text" placeholder="$" />
+            <input ref={valorDeclarado} onChange={handleValue} className="form-control mb-3" type="text" placeholder="$" />
             <label className="form-label">Valor de seguro de envío</label>
-            <input className="form-control mb-3" type="text" placeholder="$" />
+            <input className="form-control mb-3" type="text" placeholder={valroSeguro} disabled/>
             <label className="form-label">Costo de envío</label>
             <input className="form-control mb-3" type="text" placeholder="$" />
                 </div>

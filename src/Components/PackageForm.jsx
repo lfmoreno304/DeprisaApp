@@ -8,13 +8,18 @@ export default function PackageForm() {
     
     const [departamentos, setDepartamentos] = useState([]);
     const [ciudades, setCiudades] = useState([]);
+    const [ciudadesDestinatario, setCiudadesDestinatario] = useState([]);
     const selectDepartamento = useRef();
+    const selectDepartamentoDestinatario = useRef();
     const [departamento, setDepartamento] = useState();
+    const [departamentoDestinatario, setDepartamentoDestinatario] = useState();
 
     function handleSelection() {
         setDepartamento(selectDepartamento.current.options[selectDepartamento.current.selectedIndex].value)
     }
-
+    function handleSelection2() {
+        setDepartamentoDestinatario(selectDepartamentoDestinatario.current.options[selectDepartamentoDestinatario.current.selectedIndex].value)
+    }
     useEffect(() => {
         const url = "https://datos.gov.co/resource/xdk5-pm3f.json?$$app_token=AXyDJ1ulg4RCGgyNVEL4ksWeM&$select=departamento&$group=departamento&$order=departamento";
         
@@ -46,6 +51,23 @@ export default function PackageForm() {
         }
         
 }, [departamento]);
+useEffect(() => {
+    const url = "https://datos.gov.co/resource/xdk5-pm3f.json?$$app_token=AXyDJ1ulg4RCGgyNVEL4ksWeM&$select=municipio&$where=departamento=";
+    
+    console.log(departamentoDestinatario);
+    if(departamentoDestinatario){
+        axios.get(url+`'${departamentoDestinatario}'`)
+
+        .then(function (res) {
+            setCiudadesDestinatario(res.data);
+            
+        })
+        .catch(function (err) {
+            console.log("Error", err);
+        })
+    }
+    
+}, [departamentoDestinatario]);
 
     return (
     <>
@@ -151,7 +173,7 @@ export default function PackageForm() {
                                 <label className="form-label">Departamento del destinatario</label>
                             </div>
                             <div className="col">
-                            <select ref={ selectDepartamento } onChange={ handleSelection } className="form-control">
+                            <select ref={ selectDepartamentoDestinatario } onChange={ handleSelection2 } className="form-control">
                                     {departamentos.map(departamento =>(
                                         <option key={departamento.departamento} 
                                         value={departamento.departamento}>{departamento.departamento}
@@ -162,11 +184,11 @@ export default function PackageForm() {
                         </div>
                         <div className="row mb-3">
                             <div className="col">
-                                <label className="form-label">Ciudaddel destinatario</label>
+                                <label className="form-label">Ciudad del destinatario</label>
                             </div>
                             <div className="col">
                             <select className="form-control">
-                                    {ciudades.map(ciudad =>(
+                                    {ciudadesDestinatario.map(ciudad =>(
                                         <option key={ciudad.municipio} 
                                         value={ciudad.municipio}>{ciudad.municipio}
                                         </option>)
